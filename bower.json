@@ -1,0 +1,17 @@
+{
+  "name": "Mailer.io.Web",
+  "version": "1.0.0",
+  "authors": [
+    "AlexLich <psixwill@gmail.com>"
+  ],
+  "description": "Mailer.io",
+  "main": "app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
