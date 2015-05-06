@@ -1,0 +1,15 @@
+doctype html
+html(ng-app='app')
+    head(land="en")
+        meta(charset="UTF-8")
+        title Mailer.io
+        link(href="css/lib.css",rel="styleSheet")
+        //link(href="css/vendor.css",rel="styleSheet")
+        script(src="js/lib.js",type="text/javascript")
+        script(src="js/templates.js",type="text/javascript")
+        script(src="js/app.js",type="text/javascript")
+
+    body
+        div.ui.centered.grid
+            div.fifteen.wide.column
+                div(ng-view)

@@ -1,0 +1,13 @@
+div.ui.centered.grid(ng-controller="LoginController as vm")
+    div.five.wide.column
+        div.ui.segment
+            form(role='form').ui.form
+                div.field
+                    label(for='inputLogin') Login
+                    input#inputLogin(type="text", ng-model="vm.loginData.username",placeholder='Login')
+                div.field
+                    label(for='inputPassword') Password
+                    input#inputPassword(type="password", ng-model="vm.loginData.password",placeholder='Password')
+                div.field
+                    div.ui.blue.submit.button(ng-click="vm.login()") Submit
+
