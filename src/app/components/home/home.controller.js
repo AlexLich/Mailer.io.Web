@@ -13,6 +13,7 @@
         vm.activate = activate;
         vm.title = 'HomeController';
 
+
         activate();
 
         ////////////////

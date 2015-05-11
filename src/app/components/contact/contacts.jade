@@ -1,0 +1,9 @@
+table.ui.stried.table(ng-controller="ContactsController as vm")
+    thead
+        tr
+            th ФИО
+            th Номер телефона
+    tbody
+        tr(ng-repeat="person in vm.persons")
+            td {{person.lastname}} {{person.firstname[0]}}. {{person.middlename[0]}}.
+            td {{person.phonenumber}}

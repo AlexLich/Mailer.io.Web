@@ -1,0 +1,11 @@
+div.ui.vertical.menu(ng-controller="UserMenuController as vm")
+    a.item(href='#/contact') Контакты
+    a.item Messages
+    a.item Schedule
+    a.item Marks
+    a.item Settings
+        i.cogs.icon
+    a.item(ng-click="vm.logOut()") Exit
+        i.sign.out.icon
+
+

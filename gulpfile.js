@@ -13,6 +13,7 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     rimraf = require('gulp-rimraf'),
     templateCache = require('gulp-angular-templatecache'),
+    minifyHtml = require('gulp-minify-html'),
     bowerFiles = require('main-bower-files'),
     browserSync = require("browser-sync"),
     reload = browserSync.reload;

@@ -1,7 +1,7 @@
-doctype html
+doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
 html(ng-app='app')
-    head(land="en")
-        meta(charset="UTF-8")
+    head(land="ru")
+        meta(content="text/html", charset="UTF-8")
         title Mailer.io
         link(href="css/lib.css",rel="styleSheet")
         //link(href="css/vendor.css",rel="styleSheet")
@@ -11,5 +11,7 @@ html(ng-app='app')
 
     body
         div.ui.centered.grid
+            div.fifteen.wide.column()
+                div(ng-controller="IndexController as index",ng-show="index.isAuth", user-menu)
             div.fifteen.wide.column
                 div(ng-view)

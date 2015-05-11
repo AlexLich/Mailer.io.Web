@@ -16,7 +16,16 @@
                 templateUrl: 'components/login/login.html',
                 controller: 'LoginController'
             })
-            .otherwise('/home')
+            .when('/contact',
+            {
+                templateUrl: 'components/contact/contacts.html',
+                controller: 'ContactsController'
+            })
+            .when('/schedule',
+            {
+                templateUrl: 'components/schedule/schedule.html',
+                controller: 'ScheduleController'
+            })
+            .otherwise('/login');
     }
-
 })();
