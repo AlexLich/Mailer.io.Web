@@ -11,7 +11,7 @@ html(ng-app='app')
 
     body
         div.ui.centered.grid
-            div.fifteen.wide.column()
-                div(ng-controller="IndexController as index",ng-show="index.isAuth", user-menu)
+            div.fifteen.wide.column
+                user-menu(ng-show="isAuth")
             div.fifteen.wide.column
                 div(ng-view)

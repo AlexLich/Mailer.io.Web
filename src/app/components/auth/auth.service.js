@@ -3,10 +3,10 @@
         .module('app')
         .factory('authService', authService);
 
-    authService.$inject = ['localStorageService', 'serviceHelper'];
+    authService.$inject = ['$rootScope','localStorageService', 'serviceHelper'];
 
     /* @ngInject */
-    function authService(localStorageService, serviceHelper) {
+    function authService($rootScope, localStorageService, serviceHelper) {
 
         var token = serviceHelper.authorizationToken;
         var account = serviceHelper.account;
@@ -41,10 +41,13 @@
                     username: dataUser.username
                 });
 
-                console.log('Get token');
+
 
                 authentication.isAuth = true;
                 authentication.username = dataUser.username;
+
+                console.log('Get token');
+                console.log(authentication.isAuth);
             });
         }
 
@@ -57,6 +60,7 @@
         function fillAuthData() {
             var authData = localStorageService.get('authData');
             if (authData) {
+                $rootScope.$broadcast('logOn');
                 authentication.isAuth = true;
                 authentication.username = authData.username;
             }

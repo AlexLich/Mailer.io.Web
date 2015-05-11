@@ -7,7 +7,7 @@
 
     function configuration($routeProvider) {
         $routeProvider
-            .when('/home',{
+            .when('/home', {
                 templateUrl: 'components/home/home.html',
                 controller: 'HomeController'
             })
@@ -20,6 +20,16 @@
             {
                 templateUrl: 'components/contact/contacts.html',
                 controller: 'ContactsController'
+            })
+            .when('/contact/add',
+            {
+                templateUrl: 'components/contact/contact.edit.jade',
+                controller: 'ContactController'
+            })
+            .when('/contact/edit/:contactId',
+            {
+                templateUrl: '',
+                controller: 'ContactController'
             })
             .when('/schedule',
             {

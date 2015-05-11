@@ -3,10 +3,10 @@
         .module('app')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$location', 'authService'];
+    LoginController.$inject = ['$scope', '$location', 'authService'];
 
     /* @ngInject */
-    function LoginController($location, authService) {
+    function LoginController($scope, $location, authService) {
         /* jshint validthis: true */
         var vm = this;
 
@@ -34,7 +34,8 @@
             console.log('login');
             authService.login(vm.loginData).$promise
                 .then(function (response) {
-                    $location.path('home');
+                    $scope.$emit('logOn');
+                    $location.path('/home');
                 }, function (errorResponse) {
 
                 });

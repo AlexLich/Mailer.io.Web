@@ -1,0 +1,19 @@
+h5.ui.header Редактирование
+div.ui.divider
+form.ui.secondary.small.form.segment(role="form")
+    div.field
+        label(for="firstname") Имя
+        input#firstname(ng-data="contact.firstname", type="text", placeholder="Имя")
+    div.field
+        label(for="middlename") Фамилия
+        input#middlename(ng-data="contact.middlename",type="text", placeholder="Фамилия")
+    div.field
+        label(for="lastname") Отчество
+        input#lastname(ng-data="contact.lastname",type="text", placeholder="Отчество")
+    div.field
+        label(for="phone") Номер телефона
+        input#phone(ng-data="contact.phonenumber",type="text", placeholder="Номер телефона")
+    div.field
+        div.ui.blue.submit.button(ng-click="editContact(contact)") Сохранить
+
+

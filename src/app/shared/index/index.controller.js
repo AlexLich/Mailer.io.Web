@@ -3,17 +3,17 @@
         .module('app')
         .controller('IndexController', IndexController);
 
-    IndexController.$inject = ['authService'];
+    IndexController.$inject = ['$scope', 'authService'];
 
     /* @ngInject */
-    function IndexController(authService) {
+    function IndexController($scope, authService) {
         /* jshint validthis: true */
-        var vm = this;
+        var index = $scope;
 
-        vm.activate = activate;
-        vm.title = 'IndexController';
-        vm.isAuth = authService.authentication.isAuth;
-        console.log(vm.isAuth);
+        index.activate = activate;
+        index.title = 'IndexController';
+        index.isAuth = authService.authentication.isAuth;
+        console.log('isAuth: ' + index.isAuth);
 
         activate();
 

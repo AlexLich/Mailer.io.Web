@@ -37,7 +37,10 @@
         function contact() {
             return $resource
             (
-                buildUrl('api/contact')
+                buildUrl('api/contact/:personId'),
+                {
+                    personId: '@personId'
+                }
             );
         }
 

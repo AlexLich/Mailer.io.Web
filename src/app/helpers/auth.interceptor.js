@@ -3,10 +3,10 @@
         .module('app')
         .factory('authInterceptorService', authInterceptorService);
 
-    authInterceptorService.$inject = ['$q', '$location', 'localStorageService'];
+    authInterceptorService.$inject = ['$rootScope', '$q', '$location', 'localStorageService'];
 
     /* @ngInject */
-    function authInterceptorService($q, $location, localStorageService) {
+    function authInterceptorService($rootScope, $q, $location, localStorageService) {
         var service = {
             request: request,
             responseError: responseError
@@ -21,12 +21,14 @@
             var authData = localStorageService.get('authData');
             if (authData) {
                 config.headers.Authorization = 'Bearer' + authData.token;
+
             }
             return config;
         }
 
         function responseError(rejection) {
             if (rejection.status === 401) {
+                $rootScope.$broadcast('logOff');
                 $location.path('/login');
             }
             return $q.reject(rejection);

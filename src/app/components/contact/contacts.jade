@@ -3,7 +3,11 @@ table.ui.stried.table(ng-controller="ContactsController as vm")
         tr
             th ФИО
             th Номер телефона
+            th
     tbody
         tr(ng-repeat="person in vm.persons")
             td {{person.lastname}} {{person.firstname[0]}}. {{person.middlename[0]}}.
             td {{person.phonenumber}}
+            td
+                div.ui.icon.button(ng-click="vm.editContact(person.personId)")
+                    i.edit.icon

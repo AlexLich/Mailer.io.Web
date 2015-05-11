@@ -3,16 +3,17 @@
         .module('app')
         .controller('ContactsController', ContactsController);
 
-    ContactsController.$inject = ['contactService'];
+    ContactsController.$inject = ['$location', 'contactService'];
 
     /* @ngInject */
-    function ContactsController(contactService) {
+    function ContactsController($location, contactService) {
         /* jshint validthis: true */
         var vm = this;
 
         vm.activate = activate;
         vm.title = 'ContactsController';
         vm.persons = [];
+        vm.editContact = editContact;
 
         activate();
 
@@ -29,6 +30,10 @@
                 }, function (error) {
 
                 });
+        }
+
+        function editContact(contactId) {
+            $location.path('/contact/edit/' + contactId);
         }
 
 

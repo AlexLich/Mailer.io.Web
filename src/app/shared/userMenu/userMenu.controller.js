@@ -3,10 +3,10 @@
         .module('app')
         .controller('UserMenuController', UserMenuController);
 
-    UserMenuController.$inject = ['$location','authService'];
+    UserMenuController.$inject = ['$scope', '$location','authService'];
 
     /* @ngInject */
-    function UserMenuController($location, authService) {
+    function UserMenuController($scope, $location, authService) {
         /* jshint validthis: true */
         var vm = this;
 
@@ -23,7 +23,7 @@
 
         function logOut() {
             authService.logOut();
-
+            $scope.$emit('logOff');
             $location.path('/login');
         }
     }
